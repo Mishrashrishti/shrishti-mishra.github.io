@@ -1,1 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shrishti Mishra | AI Researcher | NLP & LLMs </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    :root {
+      --primary-color: #8b7ddc;
+      --primary-hover: #7a6bc9;
+      --secondary-color: #d4a5d4;
+      --text-primary: #2a2a2a;
+      --text-secondary: #666;
+      --text-light: #999;
+      --bg-light: #f5f0ff;
+      --bg-white: #ffffff;
+      --border-color: #e8dff5;
+      --accent-blue: #a8c5f5;
+      --accent-purple: #d4a5d4;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background-color: var(--bg-white);
+    }
+
+    /* ============ HEADER ============ */
+    header {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-bottom: 1px solid var(--border-color);
+      padding: 2rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary-color);
+    }
+
+    /* ============ HERO SECTION ============ */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .hero-content .subtitle {
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(45, 89, 235, 0.25);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--primary-color);
+      border: 2px solid var(--primary-color);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-color: var(--bg-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: var(--primary-color);
+      transition: all 0.3s;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .social-links a:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 280px;
+      height: 280px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 16px 40px rgba(45, 89, 235, 0.15);
+    }
+
+    /* ============ SECTION STYLES ============ */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--text-primary);
+    }
+
+    /* ============ ABOUT SECTION ============ */
+    .about-content {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: var(--bg-light);
+      padding: 3rem 3.5rem;
+      border-radius: 18px;
+    }
+
+    .about-text {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      font-size: 1.02rem;
+    }
+
+    /* ============ PROJECTS ============ */
+    .publications-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    .publication-card {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2rem;
+      padding: 2rem;
+      background-color: var(--bg-light);
+      border-radius: 10px;
+      transition: all 0.3s;
+    }
+
+    .publication-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .publication-image {
+      width: 100%;
+      max-height: 220px;
+      background-color: var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .publication-image img {
+      max-width: 100%;
+      max-height: 200px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .publication-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+
+    .publication-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge.venue {
+      background-color: var(--secondary-color);
+    }
+
+    .publication-content p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .publication-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .publication-links a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s;
+    }
+
+    .publication-links a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* ============ EXPERIENCE ============ */
+    .experience-timeline {
+      position: relative;
+      padding: 2rem 0;
+    }
+
+    .experience-item {
+      padding: 2rem;
+      margin-bottom: 2rem;
+      background-color: var(--bg-light);
+      border-left: 4px solid var(--primary-color);
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .experience-item h3 {
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .experience-item .company {
+      color: var(--primary-color);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .experience-item .duration {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .experience-item ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .experience-item li {
+      color: var(--text-secondary);
+      margin-bottom: 0.7rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .experience-item li:before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    /* ============ SKILLS ============ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-category {
+      padding: 2rem;
+      background-color: var(--bg-light);
+      border-radius: 10px;
+      border-top: 3px solid var(--primary-color);
+    }
+
+    .skill-category h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .skill-tag {
+      background-color: white;
+      color: var(--primary-color);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      border: 1px solid var(--primary-color);
+      transition: all 0.3s;
+    }
+
+    .skill-tag:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    /* ============ ACHIEVEMENTS ============ */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .achievement-card {
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(45, 89, 235, 0.2);
+      transition: all 0.3s;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(45, 89, 235, 0.3);
+    }
+
+    .achievement-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .achievement-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-card p {
+      font-size: 0.9rem;
+      opacity: 0.95;
+    }
+
+    /* ============ CV SECTION ============ */
+    .cv-download {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    .cv-card {
+      padding: 2.5rem;
+      background-color: var(--bg-light);
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.3s;
+      flex: 1;
+      max-width: 350px;
+    }
+
+    .cv-card:hover {
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+      transform: translateY(-4px);
+    }
+
+    .cv-card h3 {
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .cv-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background-color: var(--text-primary);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: var(--secondary-color);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-image img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .about-content {
+        padding: 2.5rem 1.8rem;
+      }
+
+      .publication-card {
+        grid-template-columns: 1fr;
+      }
+
+      .publication-image {
+        max-height: 260px;
+      }
+
+      section {
+        padding: 2.5rem 1rem;
+      }
+
+      section h2 {
+        font-size: 1.6rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 14px;
+      }
+
+      .hero-content h1 {
+        font-size: 1.6rem;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .skill-tag {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">Shrishti Mishra</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Shrishti Mishra</h1>
+      <p class="subtitle">AI Researcher | NLP | Large Language Models</p>
+      
+      <p>Final-year undergraduate at <strong>IIT Gandhinagar</strong>, majoring in Mechanical Engineering with a Minor in Computer Science and Engineering. Dedicated to bridging the digital divide through <strong>Multilingual and Low-Resource NLP</strong>[cite: 2, 4].</p>
+      
+      <p><strong>Incoming Decision Analytics Associate at ZS Associates</strong> [cite: 84]</p>
+
+      <div class="cta-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+      </div>
+
+      <div class="social-links">
+        <a href="mailto:shrishti.mishra@iitgn.ac.in" title="Email">📧</a>
+        <a href="https://github.com/shrishtimishra" target="_blank" title="GitHub">💻</a>
+        <a href="https://www.linkedin.com/in/Mishrashrishti/" target="_blank" title="LinkedIn">🔗</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="https://github.com/Mishrashrishti/shrishti-mishra.github.io/blob/main/my_pic.jpeg?raw=true"
+           alt="Shrishti Mishra">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>My research interests lie in <strong>Large Language Models (LLMs)</strong> with a focus on <strong>multilingual and low-resource NLP</strong>[cite: 2]. I aim to address challenges in data scarcity and quality to democratize AI for global communities speaking underrepresented languages[cite: 2, 4].</p>
+        <p>Currently, I am working on <strong>Project EKA</strong>, developing synthetic data generation pipelines for educational content[cite: 12, 13]. Previously, I built an <strong>Indic Malayalam Language Model</strong> from scratch, handling everything from curation of 120GB of data to Llama-based architecture training[cite: 9, 10, 11].</p>
+        <p>Beyond core NLP, I have experience in <strong>Reinforcement Learning</strong> for musculoskeletal simulations and <strong>Human Activity Recognition</strong>[cite: 7, 8, 73].</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Selected Research Projects</h2>
+    <div class="publications-grid">
+      
+      <div class="publication-card">
+        <div class="publication-image">
+          <div style="text-align: center; padding: 20px;">Indic Malayalam LLM</div>
+        </div>
+        <div class="publication-content">
+          <h3>Indic Malayalam Language Model Development</h3>
+          <div class="publication-meta">
+            <span class="badge venue">NLP Research</span>
+            <span class="badge">Llama Architecture</span>
+          </div>
+          <p>Curated 120 GB of raw Malayalam data through web scraping and cleaning[cite: 55, 56]. Built a complete pipeline for tokenization and training, achieving a <strong>perplexity of 171</strong> on sentence completion tasks[cite: 56].</p>
+          <div class="publication-links">
+            <a href="https://github.com/shrishtimishra">💻 GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <div class="publication-image">
+          <div style="text-align: center; padding: 20px;">Project EKA</div>
+        </div>
+        <div class="publication-content">
+          <h3>Project EKA: Synthetic Textbook Generation</h3>
+          <div class="publication-meta">
+            <span class="badge venue">Ongoing Research</span>
+            <span class="badge">DSPy & Gemini 2.0</span>
+          </div>
+          <p>Building a DAG-based pipeline using <strong>DSPy and Gemini 2.0 Flash</strong> for parallel micro-topic generation[cite: 44]. Leveraging LLMs (GPT OSS 20B/120B) to create high-quality training data for low-resource educational contexts[cite: 13, 44].</p>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <div class="publication-image">
+          <div style="text-align: center; padding: 20px;">Observe AI</div>
+        </div>
+        <div class="publication-content">
+          <h3>Observe AI: Causal RAG System</h3>
+          <div class="publication-meta">
+            <span class="badge venue">Inter-IIT Tech Meet</span>
+          </div>
+          <p>Developed a <strong>Causal RAG system</strong> for contact center analytics using hybrid retrieval (BM25 + ChromaDB) and quantized Mistral-7B[cite: 49]. Achieved 90.2% context recall and implemented an autonomous Insight Agent for evidence-grounded reasoning[cite: 49, 50].</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Work & Research Experience</h2>
+    <div class="experience-timeline">
+      
+      <div class="experience-item">
+        <h3>NLP Engineering Intern</h3>
+        <div class="company">NuWare</div>
+        <div class="duration">Summer 2025</div>
+        <ul>
+          <li>Deployed an end-to-end NLP system with <strong>90% retrieval accuracy</strong> in production[cite: 11, 34].</li>
+          <li>Distilled BERT into DistilBERT, reducing model size by 40% and inference latency by 30%[cite: 35].</li>
+          <li>Optimized vector retrieval using FAISS HNSW index and Redis-based caching[cite: 36].</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Summer Research Intern</h3>
+        <div class="company">IIT Delhi</div>
+        <div class="duration">Summer 2024</div>
+        <ul>
+          <li>Developed an ML framework for categorizing global development aid activities[cite: 38].</li>
+          <li>Analyzed the <strong>Climate FinanceBERT</strong> classifier to evaluate alignment with global finance targets[cite: 39].</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Research Student (HCR Lab)</h3>
+        <div class="company">IIT Gandhinagar</div>
+        <div class="duration">Jan 2024 – Apr 2024</div>
+        <ul>
+          <li>Simulated musculoskeletal movements using <strong>MyoSuite</strong> and RL algorithms[cite: 7].</li>
+          <li>Applied Deep Q-Networks (DQN) to optimize control policies for biomechanical systems[cite: 8, 60].</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Expertise</h2>
+    <div class="skills-grid">
+      
+      <div class="skill-category">
+        <h3>Languages & Foundations</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">DSA</span>
+          <span class="skill-tag">System Design</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>NLP & Deep Learning</h3>
+        <div class="skill-list">
+          <span class="skill-tag">LLMs (Llama, GPT)</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">Tensorflow</span>
+          <span class="skill-tag">Transformers</span>
+          <span class="skill-tag">NLTK</span>
+          <span class="skill-tag">DSPy</span>
+          <span class="skill-tag">LangChain</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Machine Learning & RL</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Scikit-Learn</span>
+          <span class="skill-tag">Reinforcement Learning</span>
+          <span class="skill-tag">Q-Learning</span>
+          <span class="skill-tag">FAISS</span>
+          <span class="skill-tag">MuJoCo</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3>Tools & Frameworks</h3>
+        <div class="skill-list">
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">React (Basics)</span>
+          <span class="skill-tag">MATLAB</span>
+          <span class="skill-tag">Arduino</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="achievements">
+    <h2>Key Achievements</h2>
+    <div class="achievements-grid">
+      <div class="achievement-card">
+        <div class="achievement-icon">🏆</div>
+        <h3>Top 6 - Inter-IIT</h3>
+        <p>Selected among top 6 students for flagship NLP problem statement at Inter-IIT Tech Summit[cite: 87].</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">🎯</div>
+        <h3>Flipkart GRID 2025</h3>
+        <p>National Semi-Finalist in the Flipkart GRID Hackathon[cite: 85].</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">📚</div>
+        <h3>U-Go Scholar</h3>
+        <p>Felicited with the U-Go Scholarship for academic excellence[cite: 88].</p>
+      </div>
+
+      <div class="achievement-card">
+        <div class="achievement-icon">💼</div>
+        <h3>ZS Associates</h3>
+        <p>Full-time offer for the role of Decision Analytics Associate[cite: 84].</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv-download">
+    <h2>Curriculum Vitae & Statement</h2>
+    <div class="cv-download">
+      <div class="cv-card">
+        <h3>📄 Full Resume</h3>
+        <p>Detailed overview of my academic background, projects, and technical skill set.</p>
+        <a href="#" class="btn btn-primary">Download Resume</a>
+      </div>
+
+      <div class="cv-card">
+        <h3>📋 Statement of Purpose</h3>
+        <p>Read more about my motivation to address the digital divide in AI[cite: 4].</p>
+        <a href="#" class="btn btn-primary">View SOP</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h3>Get in Touch</h3>
+    <p>Interested in LLM research, multilingual NLP, or AI for social good?</p>
+    <p style="margin-top: 1.5rem;">
+      <a href="mailto:shrishti.mishra@iitgn.ac.in">📧 shrishti.mishra@iitgn.ac.in</a>
+    </p>
+    <p style="margin-top: 1rem; font-size: 0.9rem;">
+      <a href="https://github.com/shrishtimishra">GitHub</a> • 
+      <a href="https://www.linkedin.com/in/Mishrashrishti/">LinkedIn</a>
+    </p>
+    <p style="margin-top: 2rem; font-size: 0.85rem; opacity: 0.7;">© 2026 Shrishti Mishra. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
