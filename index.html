@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -606,8 +607,7 @@
       
       <p>Final-year undergraduate at <strong>IIT Gandhinagar</strong>, majoring in Mechanical Engineering with a Minor in Computer Science and Engineering. Dedicated to bridging the digital divide through <strong>Multilingual and Low-Resource NLP</strong>.</p>
       
-      <p><strong>Decision Analytics Associate at ZS Associates (2026)</strong></p>
-
+      
       <div class="cta-buttons">
         <a href="#projects" class="btn btn-primary">View Projects</a>
         <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -638,126 +638,255 @@
         <p>Outside the lab, I am equally motivated by curiosity and community. I read widely, write occasionally, and enjoy conversations that stretch how I think. I like staying active—whether it's cycling around campus or playing tennis—and I often find that some of my best ideas come when I'm away from my laptop. I also enjoy bringing people together through hackathons and tech initiatives, creating spaces where learning, collaboration, and experimentation thrive.</p>
       </div>
     </div>
-  </section>
-
   <section id="projects">
-    <h2>Selected Research Projects</h2>
-    <div class="publications-grid">
-      
-      <div class="publication-card">
-        <div class="publication-content">
-          <h3>Indic Malayalam Language Model Development</h3>
-          <div class="publication-meta">
-            <span class="badge venue">NLP Research</span>
-            <span class="badge">Llama Architecture</span>
-          </div>
-          <p><strong>Advisor:</strong> Prof. Mayank Singh | Curated 120 GB of raw Malayalam data through web scraping and cleaning. Built a complete pipeline for tokenization and training, achieving a <strong>perplexity of 171</strong> on sentence completion tasks. Developed 7 tokenizers for low-resource language representation.</p>
-          <div class="publication-links">
-            <a href="https://github.com/Mishrashrishti/IndMalayalamLLM" target="_blank">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
+  <h2>Selected Projects</h2>
+  
+  <style>
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      padding: 20px 0;
+    }
 
-      <div class="publication-card">
-        <div class="publication-content">
-          <h3>Project EKA: Synthetic Textbook Generation</h3>
-          <div class="publication-meta">
-            <span class="badge venue">Ongoing Research</span>
-            <span class="badge">DSPy & Gemini 2.0</span>
-          </div>
-          <p><strong>Advisor:</strong> Prof. Mayank Singh | Building a DAG-based pipeline using DSPy and Gemini 2.0 Flash for parallel micro-topic generation with variable temperature settings. Implementing automated distillation and refinement to create structured, scalable textbooks. Leveraging LLMs (GPT OSS 20B/120B) for high-quality training data in low-resource educational contexts.</p>
-          <div class="publication-links">
-            <a href="https://github.com/Mishrashrishti/ProjectEKA" target="_blank">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
+    .project-card {
+      background: #ffffff;
+      border: 1px solid #e1e4e8;
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-      <div class="publication-card">
-        <div class="publication-content">
-          <h3>Observe AI: Causal RAG for Contact Center Analytics</h3>
-          <div class="publication-meta">
-            <span class="badge venue">Inter-IIT Tech Meet</span>
-            <span class="badge">Nov-Dec 2025</span>
-          </div>
-          <p>Developed a Causal RAG system for processing 19,621 contact center transcripts with hybrid retrieval (BM25 + ChromaDB) and quantized Mistral-7B synthesis. Achieved <strong>90.2% context recall and 80% correctness</strong>. Built autonomous Insight Agent with multi-turn conversational reasoning and 11-metric evaluation framework identifying hallucination patterns.</p>
-          <div class="publication-links">
-            <a href="https://github.com/Mishrashrishti/ObserveAI-RAG" target="_blank">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
 
-      <div class="publication-card">
-        <div class="publication-content">
-          <h3>AI-Powered Demand Forecasting System</h3>
-          <div class="publication-meta">
-            <span class="badge venue">Sparkathon Challenge</span>
-            <span class="badge">Jun-Jul 2025</span>
-          </div>
-          <p>Built intelligent demand forecasting dashboard integrating sales history, weather, local events, and social media trends for SKU-level inventory optimization. Implemented n8n workflows with Vector DB and APIs. Modeled product expiry elasticity and automated real-time alerts (restock, discounts, markdowns, inter-store transfers) reducing revenue leakage from stockouts and expiry.</p>
-          <div class="publication-links">
-            <a href="https://github.com/Mishrashrishti/DemandForecasting" target="_blank">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
+    .project-header h3 {
+      margin-top: 0;
+      color: #1a1a1a;
+      font-size: 1.25rem;
+    }
 
-      <div class="publication-card">
-        <div class="publication-content">
-          <h3>Interactive AI Game Suite & RL Visualization</h3>
-          <div class="publication-meta">
-            <span class="badge venue">Reinforcement Learning</span>
-            <span class="badge">Oct-Nov 2025</span>
-          </div>
-          <p><strong>Advisor:</strong> Prof. Neeldhara Misra | Designed custom MDP environment (IITGN-inspired gridworld) comparing Q-Learning, SARSA, and DQN paradigms. Built interactive React-based visualization framework with functional components and Web Audio API for real-time policy visualization and pedagogical demonstrations.</p>
-          <div class="publication-links">
-            <a href="https://github.com/Mishrashrishti/RLGameSuite" target="_blank">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
+    .project-meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 12px;
+    }
 
-      <div class="publication-card">
-        <div class="publication-content">
-          <h3>Enhancing Exoskeleton Design with MyoSuite and RL</h3>
-          <div class="publication-meta">
-            <span class="badge venue">Biomechanics Research</span>
-            <span class="badge">Jan-Apr 2024</span>
-          </div>
-          <p><strong>Advisor:</strong> Prof. Vineet Vashista | Utilized MyoSuite simulation environment for musculoskeletal movement analysis and exoskeleton design refinement. Applied Deep Q-Networks (DQN) to optimize control policies for biomechanical systems. Replicated basic elbow and finger movements using MuJoCo physics engine.</p>
-          <div class="publication-links">
-            <a href="https://github.com/Mishrashrishti/ExoskeletonRL" target="_blank">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
+    .advisor-link {
+      color: #0366d6;
+      text-decoration: none;
+      font-weight: 500;
+    }
 
-      <div class="publication-card">
-        <div class="publication-content">
-          <h3>Human Activity Recognition from Wearables</h3>
-          <div class="publication-meta">
-            <span class="badge venue">Classification & Time Series</span>
-            <span class="badge">Jan-Apr 2024</span>
-          </div>
-          <p><strong>Advisor:</strong> Prof. Nipun Batra | Trained decision tree classifier on UCI-HAR dataset with 3-axial acceleration and angular velocity data from 30 subjects. Achieved <strong>86%+ accuracy</strong> through feature engineering with tsfel library and hyperparameter optimization. Tested on self-collected wearable sensor data.</p>
-          <div class="publication-links">
-            <a href="https://github.com/Mishrashrishti/HAR-Wearables" target="_blank">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 15px;
+    }
 
-      <div class="publication-card">
-        <div class="publication-content">
-          <h3>Wearable Device Ecosystem for Detection of Child Abuse</h3>
-          <div class="publication-meta">
-            <span class="badge venue">Social Impact</span>
-            <span class="badge">May-Jul 2023</span>
-          </div>
-          <p><strong>Advisor:</strong> Prof. Udit Bhatia | Created prototype comprising wearable sensor technology and mobile application for real-time alerts to guardians. Deployed multilayer perceptron (MLP) model for force classification (good/bad touch) using threshold-based pattern recognition over 4-second intervals. Included mental health monitoring features.</p>
-          <div class="publication-links">
-            <a href="https://github.com/Mishrashrishti/ChildAbuse-Detection" target="_blank">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
+    .tag {
+      background: #f0f2f5;
+      color: #475569;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+    }
 
+    .project-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-link {
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: #24292e;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #444;
+    }
+  </style>
+
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta">Dec '25 - Present • Advisor: <a href="https://mayank4490.github.io/" class="advisor-link">Prof. Mayank Singh</a></div>
+        <h3>Project EKA: Synthetic Textbook Generation</h3>
+        <div class="tech-tags">
+          <span class="tag">DSPy</span>
+          <span class="tag">Gemini 2.0 Flash</span>
+          <span class="tag">DAG Pipelines</span>
+          <span class="tag">LLM Distillation</span>
+        </div>
+        <p class="project-description">
+          Built a <strong>DAG-based textbook generation pipeline</strong> enabling parallel microtopic generation with variable temperature settings. Implemented automated distillation and refinement to merge LLM outputs into structured, scalable textbooks with factual and pedagogical consistency.
+        </p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Mishrashrishti/ProjectEKA" class="btn-link btn-primary">💻 GitHub</a>
+      </div>
     </div>
-  </section>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta">Nov '25 - Dec '25 • Inter-IIT Technical Meet</div>
+        <h3>Observe AI: Causal RAG for Analytics</h3>
+        <div class="tech-tags">
+          <span class="tag">Mistral-7B</span>
+          <span class="tag">ChromaDB</span>
+          <span class="tag">BM25</span>
+          <span class="tag">RAG</span>
+        </div>
+        <p class="project-description">
+          Built a Causal RAG system processing 19,621 transcripts achieving <strong>90.2% context recall</strong>. Developed an autonomous Insight Agent using Gemini API and a production-ready <strong>11-metric assessment system</strong> to identify and reduce hallucination rates.
+        </p>
+      </div>
+      <div class="project-links">
+        <a href="https://iitgnacin-my.sharepoint.com/:u:/g/personal/22110050_iitgn_ac_in/IQClA4gKOYJCQZK9liFsgswjAfWRFBumVifQyWi3W__Pp_0?e=CleEN0" class="btn-link btn-primary">🔗 Project Link</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta">Aug '24 - Dec '24 • Advisor: <a href="https://mayank4490.github.io/" class="advisor-link">Prof. Mayank Singh</a></div>
+        <h3>Indic Malayalam Language Model</h3>
+        <div class="tech-tags">
+          <span class="tag">Llama Architecture</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Tokenization</span>
+        </div>
+        <p class="project-description">
+          Curated <strong>120 GB of raw Malayalam data</strong> to train 7 tokenizers and a large language model. Focused on data deduplication and text cleaning, achieving a <strong>perplexity of 171</strong> on sentence completion tasks.
+        </p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Mishrashrishti/NLP_Assignment_Team5/tree/main" class="btn-link btn-primary">💻 GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta">Oct '25 - Nov '25 • Advisor: <a href="https://scholar.google.co.in/citations?user=XFgieDYAAAAJ&hl=en" class="advisor-link">Prof. Neeldhara Misra</a></div>
+        <h3>Interactive AI Game Suite (RL)</h3>
+        <div class="tech-tags">
+          <span class="tag">Q-Learning</span>
+          <span class="tag">SARSA</span>
+          <span class="tag">DQN</span>
+          <span class="tag">React</span>
+          <span class="tag">Web Audio API</span>
+        </div>
+        <p class="project-description">
+          Designed a custom <strong>IITGN-inspired gridworld</strong> to evaluate RL paradigms. Engineered a React-based visualization framework for real-time policy visualization and pedagogical demonstrations of learned behaviors.
+        </p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/nishishah05/CampusQuest-An-IITGN-inspired-Gridworld/tree/main" class="btn-link btn-primary">💻 GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta">Jun '25 - Jul '25 • Sparkathon Challenge</div>
+        <h3>AI-Powered Demand Forecasting</h3>
+        <div class="tech-tags">
+          <span class="tag">n8n</span>
+          <span class="tag">Vector DB</span>
+          <span class="tag">APIs</span>
+          <span class="tag">SKU Optimization</span>
+        </div>
+        <p class="project-description">
+          Built a forecasting dashboard integrating sales history, weather, and social media trends. Modeled <strong>product expiry elasticity</strong> and implemented automated real-time alerts for restocks and markdowns to reduce revenue leakage.
+        </p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Mishrashrishti/AI-Powered-Demand-Forecasting-System" class="btn-link btn-primary">💻 GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta">Jan '24 - Apr '24 • Advisor: <a href="https://scholar.google.co.in/citations?user=-EJolg8AAAAJ&hl=en" class="advisor-link">Prof. Vineet Vashista</a></div>
+        <h3>Exoskeleton Design Refinement</h3>
+        <div class="tech-tags">
+          <span class="tag">MyoSuite</span>
+          <span class="tag">MuJoCo</span>
+          <span class="tag">Reinforcement Learning</span>
+        </div>
+        <p class="project-description">
+          Utilized MyoSuite to analyze musculoskeletal movements and refine designs through multi-objective optimization. Applied <strong>RL techniques</strong> to optimize task efficiency for the MyoArm model in a 2D plane.
+        </p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Mishrashrishti/Enhancing-Exoskeleton-Design-with-MyoSuite-and-Reinforcement-Learning" class="btn-link btn-primary">💻 GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta">Jan '24 - Apr '24 • Advisor: <a href="https://nipunbatra.github.io/" class="advisor-link">Prof. Nipun Batra</a></div>
+        <h3>Human Activity Recognition</h3>
+        <div class="tech-tags">
+          <span class="tag">Decision Tree</span>
+          <span class="tag">tsfel</span>
+          <span class="tag">UCI-HAR Dataset</span>
+        </div>
+        <p class="project-description">
+          Trained a classifier on 3-axial accelerometer data from 30 subjects. Achieved <strong>86%+ accuracy</strong> on self-collected testing data through advanced featurization and hyperparameter optimization.
+        </p>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/Mishrashrishti/Human-Activity-Recognition" class="btn-link btn-primary">💻 GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <div class="project-meta">May '23 - Jul '23 • Advisor: <a href="https://scholar.google.com/citations?user=tYqY-VoAAAAJ&hl=en" class="advisor-link">Prof. Udit Bhatia</a></div>
+        <h3>Child Abuse Detection Ecosystem</h3>
+        <div class="tech-tags">
+          <span class="tag">Wearable Tech</span>
+          <span class="tag">MLP</span>
+          <span class="tag">Pattern Recognition</span>
+        </div>
+        <p class="project-description">
+          Developed a wearable prototype using a <strong>Multilayer Perceptron (MLP)</strong> model to classify "good vs bad touch" based on force values. Includes real-time guardian alerts and mental health monitoring.
+        </p>
+      </div>
+      <div class="project-links">
+        <a href="https://www.linkedin.com/in/shrishti-mishra-319203277/details/projects/" class="btn-link btn-primary">🔗 LinkedIn Link</a>
+      </div>
+    </div>
+
+  </div>
+</section>
 
   <section id="experience">
     <h2>Work & Research Experience</h2>
